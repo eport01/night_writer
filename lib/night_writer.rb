@@ -16,7 +16,7 @@ class NightWriter
   end
 end
 #put this thing below in the runner maybe?
-night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt').write_to_file
+night_writer = NightWriter.new(@input_file, @output_file)
 
 # require 'pry'; binding.pry
 #ruby ./lib/night_writer.rb message.txt braille.txt
