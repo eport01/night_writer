@@ -1,4 +1,4 @@
-require './night_writer'
+
 class Dictionary
   attr_reader :alphabet, :translate_letter
   def initialize
@@ -10,8 +10,14 @@ class Dictionary
     @alphabet.select {|letters| letters.find {|eng, braille| eng  == letter}}[0].values[0]
   end
 
-end
+  # def translate 
+  #   @input_file
+  #   require 'pry'; binding.pry
+  # end
 
+end
+# dictionary = Dictionary.new 
+# p dictionary.translate
 # [h = "0.\n00\n.."]
 # puts h 
 # dictionary = Dictionary.new

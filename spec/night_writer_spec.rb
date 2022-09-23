@@ -27,7 +27,11 @@ RSpec.describe NightWriter do
     night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt')
     @dictionary = Dictionary.new
 # require 'pry'; binding.pry
-    expect(night_writer.dictionary.translate_letter("h")).to eq("0.\n00\n..")
+    expect(night_writer.eng_to_br("h")).to eq("0.\n00\n..")
+  end
+
+  it 'can write new translation in different file' do 
+    
   end
 #test if file exists
 #stub the return of anything else
