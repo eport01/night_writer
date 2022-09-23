@@ -12,5 +12,16 @@ RSpec.describe Dictionary do
     dictionary = Dictionary.new
     # require 'pry'; binding.pry
     expect(dictionary.translate_letter("h")).to eq( "0.\n00\n..")
+    expect(dictionary.translate_letter("a")).to eq( "0.\n..\n..")
   end
+
+  it 'can read from an input file and write to an output file' do 
+    @night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt')
+    dictionary = Dictionary.new
+    expect(dictionary.translate_letter("h")).to eq( "0.\n00\n..")
+
+
+  end 
+
+  
 end

@@ -1,18 +1,13 @@
-
+require './dictionary'
 class NightWriter
-  attr_reader :write_to_file
+  attr_reader :write_to_file, :dictionary
   def initialize(input_file, output_file)
     @input_file = ARGV[0]
     @output_file = ARGV[1]
+    @dictionary = Dictionary.new
   end
-  def write_to_file
-    # content = File.read(ARGV[0])
-    # content = File.read(@input_file)
-
- 
-    # File.write(@output_file, content)
-    # puts " Created #{@output_file} containing #{@output_file.length} characters"
-   
+  def eng_to_br(letter) 
+    @dictionary.translate_letter(letter)
   end
 end
 #put this thing below in the runner maybe?
