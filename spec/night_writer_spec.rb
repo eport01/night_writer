@@ -1,7 +1,5 @@
-require 'rspec'
+require './spec_helper'
 require './lib/night_writer'
-
-
 
 
 RSpec.describe NightWriter do 
@@ -15,8 +13,12 @@ RSpec.describe NightWriter do
   it 'exists' do 
     night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt')
     expect(night_writer).to be_an_instance_of(NightWriter)
+
+  end 
+
+  it ' is instantiated with two files' do 
+    night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt')
     allow(night_writer).to receive(ARGV[0]).and_return(ARGV[1])
-    expect(night_writer).to be_an_instance_of(NightWriter)
     expect(ARGV).to eq(["./lib/message.txt", "./lib/braille.txt"])
   end
 #test if file exists
