@@ -23,10 +23,10 @@ RSpec.describe NightWriter do
     expect(ARGV).to eq(["./lib/message.txt", "./lib/braille.txt"])
   end
 
-  it 'can translate one letter' do 
+  xit 'can translate one letter' do 
     night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt')
     @dictionary = Dictionary.new
-require 'pry'; binding.pry
+# require 'pry'; binding.pry
     allow(night_writer.translate).to receive(h)
     expect(night_writer.translate).to eq("0.\n00\n..")
   end
