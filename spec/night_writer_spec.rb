@@ -14,13 +14,16 @@ RSpec.describe NightWriter do
   it 'exists' do 
     night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt')
     expect(night_writer).to be_an_instance_of(NightWriter)
-
   end 
 
   it ' is instantiated with two files' do 
     night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt')
     allow(night_writer).to receive(ARGV[0]).and_return(ARGV[1])
     expect(ARGV).to eq(["./lib/message.txt", "./lib/braille.txt"])
+  end
+
+  it 'has an input file and an output file' do 
+    
   end
 
   xit 'can translate one letter' do 

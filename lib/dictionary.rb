@@ -3,7 +3,34 @@ class Dictionary
   attr_reader :alphabet, :translate_letter
   def initialize
     # @night_writer = NightWriter.new(@input_file, @output_file)
-    @alphabet = [{"a" => "0.\n..\n.."},{"h" => "0.\n00\n.."}]
+    @alphabet = [
+      {"a" => "0.\n..\n.."},
+      {"b" => },
+      {"c" => },
+      {"d" => },
+      {"e" => },
+      {"f" => },
+      {"g" => },
+      {"h" => "0.\n00\n.."},
+      {"i" => },
+      {"j" => },
+      {"k" => },
+      {"l" => },
+      {"m" => },
+      {"n" => },
+      {"o" => },
+      {"p" => },
+      {"q" => },
+      {"r" => },
+      {"s" => },
+      {"t" => },
+      {"u" => },
+      {"v" => },
+      {"w" => },
+      {"x" => },
+      {"y" => },
+      {"z" => },
+    ]
   end
 
   def translate_letter(letter)
