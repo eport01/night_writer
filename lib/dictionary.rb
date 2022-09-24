@@ -11,7 +11,7 @@ class Dictionary
       {"e" => "0.\n.0\n.."},
       {"f" => "00\n0.\n.."},
       {"g" => "00\n00\n.."},
-      {"h" => "0.\n00\n.."},
+      {"h"  => "0.\n00\n.."},
       {"i" => ".0\n0.\n.."},
       {"j" => ".0\n00\n.."},
       {"k" => "0.\n..\n0."},
@@ -37,7 +37,9 @@ class Dictionary
   #call method on each letter 
 
   def translate_letter(letter)
-    @alphabet.select {|letters| letters.find {|eng, braille| eng  == letter}}[0].values[0]
+    # @alphabet.select {|letters| letters.find {|eng, braille| p braille if eng  == letter}}[0].values.flatten
+    test = @alphabet.select {|letters| letters.find {|eng, braille| eng  == letter}}[0].values[0]
+    
   end
 
   # def translate 
