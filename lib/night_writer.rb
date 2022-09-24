@@ -11,10 +11,17 @@ class NightWriter
 
   def translate 
     content = File.read(@input_file)
+    individual_letters = content.scan(/\w/)
+    braille_letters = []
+    individual_letters.each do |letter|
+      braille_letters << @dictionary.translate_letter(letter)
+    end
+    braille_letters
+    #content needs to be split up (in dictionary class?)
     # require 'pry'; binding.pry
-    translation = @dictionary.translate_letter(content)
-    File.write(ARGV[1], translation)
-    puts " Created #{ARGV[1]} containing #{content.length} characters"
+    # translation = @dictionary.translate_letter(content)
+    File.write(ARGV[1], braille_letters)
+    puts " Created #{ARGV[1]} containing #{braille_letters.length} characters"
   end
 
 end

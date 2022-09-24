@@ -33,6 +33,9 @@ class Dictionary
     ]
   end
 
+  #write a method that takes a word in and splits it into individual letters,
+  #call method on each letter 
+
   def translate_letter(letter)
     @alphabet.select {|letters| letters.find {|eng, braille| eng  == letter}}[0].values[0]
   end
