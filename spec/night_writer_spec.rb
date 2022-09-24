@@ -26,8 +26,9 @@ RSpec.describe NightWriter do
   it 'can translate one letter' do 
     night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt')
     @dictionary = Dictionary.new
-# require 'pry'; binding.pry
-    expect(night_writer.eng_to_br("h")).to eq("0.\n00\n..")
+require 'pry'; binding.pry
+    allow(night_writer.translate).to receive(h)
+    expect(night_writer.translate).to eq("0.\n00\n..")
   end
 
   it 'can write new translation in different file' do 
