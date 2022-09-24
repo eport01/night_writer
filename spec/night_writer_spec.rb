@@ -1,5 +1,6 @@
 require './spec_helper'
 require './lib/night_writer'
+require './lib/dictionary'
 
 
 RSpec.describe NightWriter do 
@@ -20,6 +21,18 @@ RSpec.describe NightWriter do
     night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt')
     allow(night_writer).to receive(ARGV[0]).and_return(ARGV[1])
     expect(ARGV).to eq(["./lib/message.txt", "./lib/braille.txt"])
+  end
+
+  xit 'can translate one letter' do 
+    night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt')
+    @dictionary = Dictionary.new
+# require 'pry'; binding.pry
+    allow(night_writer.translate).to receive(h)
+    expect(night_writer.translate).to eq("0.\n00\n..")
+  end
+
+  it 'can write new translation in different file' do 
+    
   end
 #test if file exists
 #stub the return of anything else
