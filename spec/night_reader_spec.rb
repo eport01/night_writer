@@ -15,6 +15,6 @@ RSpec.describe NightReader do
     night_reader = NightReader.new('./reader_input.txt', './reader_output.txt')
     allow(night_reader).to receive(:input_file).and_return('./reader_input.txt')
     expect(night_reader.night_read_file).to eq("0.0.0.0.0....00.0.0.00\n00.00.0..0..00.0000..0\n....0.0.0....00.0.0...\n\n")
-
+# require 'pry'; binding.pry
   end
 end
