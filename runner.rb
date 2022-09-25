@@ -1,5 +1,6 @@
 require './lib/night_writer'
 require './lib/dictionary'
+require './lib/night_reader'
 
 
 
@@ -8,20 +9,15 @@ require './lib/dictionary'
 # ARGV[0] = 'message.txt'
 # ARGV[1] = 'braille.txt'
 
-# content = File.read(ARGV[0])
 night_writer = NightWriter.new(ARGV[0], ARGV[1])
-# night_writer.read_file
 night_writer.braille_print
-# File.write(ARGV[1], content)
-# puts " Created #{ARGV[1]} containing #{ARGV[1].length} characters"
-# require 'pry'; binding.pry
-# night_writer.dictionary.translate_letter("h")
 
-# message = File.readlines(night_writer.input_file)
-# translation = night_writer.eng_to_br(message)
-# File.write(night_writer.output_file, translation)
+night_reader = NightReader.new(ARGV[0], ARGV[1])
+night_reader.english_print
 
 
 
 
-# require 'pry'; binding.pry
+
+
+
