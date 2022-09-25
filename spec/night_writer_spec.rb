@@ -4,20 +4,17 @@ require './lib/dictionary'
 
 
 RSpec.describe NightWriter do 
-  before(:each) do 
-    # @night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt').write_to_file
-    # @night_writer.input_file = './lib/message.txt'
-    night_writer = NightWriter.new('./message.txt', './braille.txt')
-    ARGV[0] = './message.txt'
-    ARGV[1] = './braille.txt'
-  end 
 
   it 'exists' do 
+    ARGV[0] = './message.txt'
+    ARGV[1] = './braille.txt'
     night_writer = NightWriter.new('./message.txt', './braille.txt')
     expect(night_writer).to be_an_instance_of(NightWriter)
   end 
 
   it ' is instantiated with two files' do 
+    ARGV[0] = './message.txt'
+    ARGV[1] = './braille.txt'
     night_writer = NightWriter.new('./message.txt', './braille.txt')
     allow(night_writer).to receive(ARGV[0]).and_return(ARGV[1])
     expect(ARGV).to eq(["./message.txt", "./braille.txt"])
