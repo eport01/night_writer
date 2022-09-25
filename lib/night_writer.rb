@@ -35,6 +35,7 @@ class NightWriter
     translate
     @all_letters  = []
     @braille_letters.each_slice(40) {|letter| @all_letters << letter}
+    @all_letters
   end 
 
     #### blocking 

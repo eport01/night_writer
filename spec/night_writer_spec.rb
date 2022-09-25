@@ -42,6 +42,17 @@ RSpec.describe NightWriter do
     allow(night_writer).to receive(:input_file).and_return('./test.txt')
     expect(night_writer.translate).to eq(["0.\n00\n..", "0.\n.0\n..", "0.\n0.\n0.", "0.\n0.\n0.", "0.\n.0\n0.", ".0\n00\n.0", "0.\n.0\n0.", "00\n..\n..", "0.\n0.\n0.", "00\n.0\n.."])
   end
+
+  it 'splits the array of the translate method into a nested array of 40 characters' do 
+    night_writer = NightWriter.new('./long_test.txt', './braille_test.txt')
+    allow(night_writer).to receive(:input_file).and_return('./long_test.txt')
+    expect(night_writer.line_blocking.count).to eq(2)
+
+    #test a file w/ more than 40 characters 
+    # require 'pry'; binding.pry
+  end
+
+  
 #test length of output file 
 #night_writer.output_file.length
 #test if file exists
