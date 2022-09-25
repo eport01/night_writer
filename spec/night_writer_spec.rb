@@ -57,7 +57,7 @@ RSpec.describe NightWriter do
     expect(night_writer.horizontal_blocks).to eq(expected)
   end
 
-  it 'prints the file and character count to the terminal' do 
+  it 'translates input file and prints to output file' do 
     night_writer = NightWriter.new('./test.txt', './braille_test.txt')
     allow(night_writer).to receive(:input_file).and_return('./test.txt')
     allow(night_writer).to receive(:output_file).and_return('./braille_test.txt')

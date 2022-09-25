@@ -1,6 +1,6 @@
 
 class Dictionary
-  attr_reader :alphabet, :translate_letter
+  attr_reader :alphabet, :translate_letter, :translate_braille
   def initialize
     # @night_writer = NightWriter.new(@input_file, @output_file)
     @alphabet = [
@@ -40,6 +40,11 @@ class Dictionary
     # @alphabet.select {|letters| letters.find {|eng, braille| p braille if eng  == letter}}[0].values.flatten
     test = @alphabet.select {|letters| letters.find {|eng, braille| eng  == letter}}[0].values[0]
     
+  end
+
+  def translate_braille(character)
+    test = @alphabet.select {|letters| letters.find {|eng, braille| braille  == character}}[0].keys[0]
+
   end
 
   #maybe move alphabet to method 
