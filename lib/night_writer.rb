@@ -12,7 +12,7 @@ class NightWriter
     # content = File.read(@input_file)
     # individual_letters = content.scan(/\w/)
     # @content = File.read(@input_file).scan(/\w/)
-    File.read(@input_file)
+    File.read(input_file)
   end
 
   def individual_letters

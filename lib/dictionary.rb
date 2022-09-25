@@ -42,6 +42,8 @@ class Dictionary
     
   end
 
+  #maybe move alphabet to method 
+
   # def translate 
   #   @input_file
   #   require 'pry'; binding.pry

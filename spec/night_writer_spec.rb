@@ -23,23 +23,29 @@ RSpec.describe NightWriter do
     expect(ARGV).to eq(["./lib/message.txt", "./lib/braille.txt"])
   end
 
-  it 'has an input file and an output file' do 
-
-  end
-
-  xit 'can translate one letter' do 
-    night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt')
-    @dictionary = Dictionary.new
-# require 'pry'; binding.pry
-    allow(night_writer.translate).to receive(h)
-    expect(night_writer.translate).to eq("0.\n00\n..")
-  end
-
   it 'can read a file' do
     # require 'pry'; binding.pry
-    expect(@night_writer.read_file).to eq(1)
-    
+    night_writer = NightWriter.new('./test.txt', './braille_test.txt')
+    allow(night_writer).to receive(:input_file).and_return('./test.txt')
+    # require 'pry'; binding.pry
+    expect(night_writer.read_file).to eq("helloworld")
   end
+
+  it 'can split up individual letters into an array of strings' do 
+    night_writer = NightWriter.new('./test.txt', './braille_test.txt')
+    allow(night_writer).to receive(:input_file).and_return('./test.txt')
+    expect(night_writer.individual_letters).to eq(["h", "e", "l", "l", "o", "w", "o", "r", "l", "d"])
+  end
+
+  it 'can translate english letters into braille letters' do 
+    night_writer = NightWriter.new('./test.txt', './braille_test.txt')
+    allow(night_writer).to receive(:input_file).and_return('./test.txt')
+    # require 'pry'; binding.pry
+    expect(night_writer).to eq("helloworld")
+
+  end
+#test length of output file 
+#night_writer.output_file.length
 #test if file exists
 #stub the return of anything else
 #tell it what the messaage is and what the return is 
