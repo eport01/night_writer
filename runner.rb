@@ -9,7 +9,9 @@ require './lib/dictionary'
 # ARGV[1] = 'braille.txt'
 
 # content = File.read(ARGV[0])
-night_writer = NightWriter.new(ARGV[0], ARGV[1]).translate
+night_writer = NightWriter.new(ARGV[0], ARGV[1])
+# night_writer.read_file
+night_writer.braille_print
 # File.write(ARGV[1], content)
 # puts " Created #{ARGV[1]} containing #{ARGV[1].length} characters"
 # require 'pry'; binding.pry
