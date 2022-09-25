@@ -62,6 +62,5 @@ class NightWriter
 
 
 end
-#put this thing below in the runner maybe?
-# night_writer = NightWriter.new(@input_file, @output_file)
+
 

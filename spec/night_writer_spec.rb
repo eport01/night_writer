@@ -7,9 +7,9 @@ RSpec.describe NightWriter do
   before(:each) do 
     # @night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt').write_to_file
     # @night_writer.input_file = './lib/message.txt'
-    night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt')
-    ARGV[0] = './lib/message.txt'
-    ARGV[1] = './lib/braille.txt'
+    night_writer = NightWriter.new('./message.txt', './braille.txt')
+    ARGV[0] = './message.txt'
+    ARGV[1] = './braille.txt'
   end 
 
   it 'exists' do 
@@ -20,7 +20,7 @@ RSpec.describe NightWriter do
   it ' is instantiated with two files' do 
     night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt')
     allow(night_writer).to receive(ARGV[0]).and_return(ARGV[1])
-    expect(ARGV).to eq(["./lib/message.txt", "./lib/braille.txt"])
+    expect(ARGV).to eq(["./message.txt", "./braille.txt"])
   end
 
   it 'can read a file' do
@@ -57,10 +57,17 @@ RSpec.describe NightWriter do
     expect(night_writer.horizontal_blocks).to eq(expected)
   end
 
-  
-#test length of output file 
-#night_writer.output_file.length
-#test if file exists
-#stub the return of anything else
-#tell it what the messaage is and what the return is 
+  it 'prints the file and character count to the terminal' do 
+    night_writer = NightWriter.new('./test.txt', './braille_test.txt')
+    allow(night_writer).to receive(:input_file).and_return('./test.txt')
+    allow(night_writer).to receive(:output_file).and_return('./braille_test.txt')
+    # expected = File.read(night_writer.output_file)
+    # require 'pry'; binding.pry
+    night_writer.braille_print
+    expected = File.read(night_writer.output_file)
+    expect(expected).to eq(
+      "0.0.0.0.0..00.000.00\n00.00.0..000.0..0..0\n....0.0.0..00...0..."
+    )
+  end
 end
+
