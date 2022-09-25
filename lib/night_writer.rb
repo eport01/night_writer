@@ -26,6 +26,8 @@ class NightWriter
     @content.each do |letter|
       @braille_letters << @dictionary.translate_letter(letter)
     end
+    @braille_letters
+    # require 'pry'; binding.pry
   end 
     #######
    ### making a nested array

@@ -40,9 +40,7 @@ RSpec.describe NightWriter do
   it 'can translate english letters into braille letters' do 
     night_writer = NightWriter.new('./test.txt', './braille_test.txt')
     allow(night_writer).to receive(:input_file).and_return('./test.txt')
-    # require 'pry'; binding.pry
-    expect(night_writer).to eq("helloworld")
-
+    expect(night_writer.translate).to eq(["0.\n00\n..", "0.\n.0\n..", "0.\n0.\n0.", "0.\n0.\n0.", "0.\n.0\n0.", ".0\n00\n.0", "0.\n.0\n0.", "00\n..\n..", "0.\n0.\n0.", "00\n.0\n.."])
   end
 #test length of output file 
 #night_writer.output_file.length
