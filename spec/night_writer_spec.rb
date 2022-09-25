@@ -47,9 +47,14 @@ RSpec.describe NightWriter do
     night_writer = NightWriter.new('./long_test.txt', './braille_test.txt')
     allow(night_writer).to receive(:input_file).and_return('./long_test.txt')
     expect(night_writer.line_blocking.count).to eq(2)
+  end
 
-    #test a file w/ more than 40 characters 
-    # require 'pry'; binding.pry
+  it 'prints on a new line after 40 characters' do 
+    night_writer = NightWriter.new('./long_test.txt', './braille_test.txt')
+    allow(night_writer).to receive(:input_file).and_return('./long_test.txt')
+    expected = ["0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.\n00.00.0..000.00.0..000.00.0..000.00.0..000.00.0..000.00.0..000.00.0..000.00.0..0\n....0.0.0.....0.0.0.....0.0.0.....0.0.0.....0.0.0.....0.0.0.....0.0.0.....0.0.0.",
+      "0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.\n00.00.0..000.00.0..000.00.0..000.00.0..000.00.0..000.00.0..000.00.0..0\n....0.0.0.....0.0.0.....0.0.0.....0.0.0.....0.0.0.....0.0.0.....0.0.0."]
+    expect(night_writer.horizontal_blocks).to eq(expected)
   end
 
   

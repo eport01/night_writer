@@ -51,8 +51,7 @@ class NightWriter
       @total_block << block
       # @total_block << " "
     end
-    # translation = File.write(ARGV[1], total_block.join("\n"))
-    # puts " Created #{ARGV[1]} containing #{braille_letters.length} characters"
+    @total_block
   end
 
   def braille_print 
