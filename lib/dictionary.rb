@@ -21,7 +21,7 @@ class Dictionary
       {"o" => "0.\n.0\n0."},
       {"p" => "00\n0.\n0."},
       {"q" => "00\n00\n0."},
-      {"r" => "00\n..\n.."},
+      {"r" => "0.\n00\n0."},
       {"s" => ".0\n0.\n0."},
       {"t" => ".0\n00\n0."},
       {"u" => "0.\n..\n00"},
@@ -43,7 +43,7 @@ class Dictionary
   end
 
   def translate_braille(character)
-    test = @alphabet.select {|letters| letters.find {|eng, braille| braille  == character}}[0].keys[0]
+    @alphabet.select {|letters| letters.find {|eng, braille| braille  == character}}[0].keys[0]
 
   end
 

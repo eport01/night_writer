@@ -14,7 +14,8 @@ require './lib/night_reader'
 
 night_reader = NightReader.new(ARGV[0], ARGV[1])
 require 'pry'; binding.pry
-night_reader.individual_letters
+night_reader.split_lines
+
 
 
 
