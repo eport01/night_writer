@@ -74,5 +74,4 @@ RSpec.describe NightReader do
     expected = File.read('./fixture_files/reader_output.txt')
     expect(expected).to eq("hello world")
   end
-
 end

@@ -2,7 +2,6 @@ require './spec_helper'
 require './lib/night_writer'
 require './lib/dictionary'
 
-
 RSpec.describe NightWriter do 
 
   it 'exists' do 
@@ -21,10 +20,8 @@ RSpec.describe NightWriter do
   end
 
   it 'can read a file' do
-    # require 'pry'; binding.pry
     night_writer = NightWriter.new('./fixture_files/test.txt', './fixture_files/braille_test.txt')
     allow(night_writer).to receive(:input_file).and_return('./fixture_files/test.txt')
-    # require 'pry'; binding.pry
     expect(night_writer.read_file).to eq("helloworld")
   end
 
@@ -59,8 +56,6 @@ RSpec.describe NightWriter do
     night_writer = NightWriter.new('./fixture_files/test.txt', './fixture_files/braille_test.txt')
     allow(night_writer).to receive(:input_file).and_return('./fixture_files/test.txt')
     allow(night_writer).to receive(:output_file).and_return('./fixture_files/braille_test.txt')
-    # expected = File.read(night_writer.output_file)
-    # require 'pry'; binding.pry
     night_writer.braille_print
     written = File.read(night_writer.output_file)
     expected = "0.0.0.0.0..00.0.0.00\n00.00.0..000.0000..0\n....0.0.0..00.0.0..."
