@@ -70,7 +70,6 @@ RSpec.describe NightReader do
     night_reader = NightReader.new('./fixture_files/reader_input.txt', './fixture_files/reader_output.txt')
     allow(night_reader).to receive(:input_file).and_return('./fixture_files/reader_input.txt')
     allow(night_reader).to receive(:output_file).and_return('./fixture_files/reader_output.txt')
-    # require 'pry'; binding.pry
     night_reader.english_print
     expected = File.read('./fixture_files/reader_output.txt')
     expect(expected).to eq("hello world")

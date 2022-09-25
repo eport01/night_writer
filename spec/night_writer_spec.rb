@@ -62,9 +62,9 @@ RSpec.describe NightWriter do
     # expected = File.read(night_writer.output_file)
     # require 'pry'; binding.pry
     night_writer.braille_print
-    expected = File.read(night_writer.output_file)
+    written = File.read(night_writer.output_file)
     expected = "0.0.0.0.0..00.0.0.00\n00.00.0..000.0000..0\n....0.0.0..00.0.0..."
-    expect(expected).to eq(expected)
+    expect(written).to eq(expected)
   end
 end
 
