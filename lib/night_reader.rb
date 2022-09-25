@@ -13,24 +13,18 @@ class NightReader
   end
 
   def split_lines 
-    night_read_file
-    #first make sure braille is <40 length
-    #split into an array w/ 3 lines
-    #first separate the braille characters?
-    #first write each letter on one line?
-    #take two characters from 3 lines, print horizontally, concat together 
-   
+    night_read_file 
+    require 'pry'; binding.pry
     @lines = @content.split.each_slice(3).to_a 
-    # @lines.map {|character| character.scan(/../)}
     @nested = @lines.map {|character| character.map {|letter| letter.scan(/../)}}
-    # @letters = @nested[0].zip(*(nested[1..-1]))
     @letters = @nested.map {|group| group[0].zip(*(group[1..-1]))}
     @braille_lines = @letters.map {|groups| groups.map {|group| group.join("\n")}}
-    # @braille_line = @letters.map {|letter| letter.join("\n")}
-    
-    #@dictionary.translate_braille(character)
-    @translated = @braille_lines.map {|group| group.map {|letter| @dictionary.translate_braille(letter)}}
+    # @translated = @braille_lines.map {|group| group.map {|letter| @dictionary.translate_braille(letter)}}
+    @translated = []
+    @braille_lines.map {|group| group.map {|letter| @translated << @dictionary.translate_braille(letter)}}
+    @translated
     @english = @translated.join 
+   
   end
 
   def english_print
@@ -38,14 +32,4 @@ class NightReader
     translation = File.write(ARGV[1], @english)
     puts "Created #{ARGV[1]} containing #{@english.length} characters"
   end
-
-  # def split_characters
-  #   #need to iterate over array 
-  #   @lines.first.scan(/../)
-  # end
-
-  # def translate_braille(character) 
-  #   @dictionary.translate_braille(character)
-  # end
-
 end
