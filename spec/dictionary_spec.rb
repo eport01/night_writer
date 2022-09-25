@@ -10,7 +10,6 @@ RSpec.describe Dictionary do
 
   it 'changes a to the braille equivalent' do 
     dictionary = Dictionary.new
-    # require 'pry'; binding.pry
     expect(dictionary.translate_letter("h")).to eq( "0.\n00\n..")
     expect(dictionary.translate_letter("a")).to eq( "0.\n..\n..")
   end
