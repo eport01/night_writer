@@ -13,8 +13,9 @@ require './lib/night_reader'
 # night_writer.braille_print
 
 night_reader = NightReader.new(ARGV[0], ARGV[1])
+
+# night_reader.split_lines
 require 'pry'; binding.pry
-night_reader.split_lines
 
 
 

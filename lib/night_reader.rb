@@ -29,8 +29,14 @@ class NightReader
     # @braille_line = @letters.map {|letter| letter.join("\n")}
     
     #@dictionary.translate_braille(character)
-    @braille_lines.map {|group| group.map {|letter| night_reader.dictionary.translate_braille(letter)}}
-  
+    @translated = @braille_lines.map {|group| group.map {|letter| @dictionary.translate_braille(letter)}}
+    @english = @translated.join 
+  end
+
+  def english_print
+    split_lines
+    translation = File.write(ARGV[1], @english)
+    puts "Created #{ARGV[1]} containing #{@english.length} characters"
   end
 
   # def split_characters
