@@ -7,6 +7,7 @@ RSpec.describe NightWriter do
   before(:each) do 
     # @night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt').write_to_file
     # @night_writer.input_file = './lib/message.txt'
+    night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt')
     ARGV[0] = './lib/message.txt'
     ARGV[1] = './lib/braille.txt'
   end 
@@ -23,7 +24,7 @@ RSpec.describe NightWriter do
   end
 
   it 'has an input file and an output file' do 
-    
+
   end
 
   xit 'can translate one letter' do 
@@ -34,7 +35,9 @@ RSpec.describe NightWriter do
     expect(night_writer.translate).to eq("0.\n00\n..")
   end
 
-  it 'can write new translation in different file' do 
+  it 'can read a file' do
+    # require 'pry'; binding.pry
+    expect(@night_writer.read_file).to eq(1)
     
   end
 #test if file exists

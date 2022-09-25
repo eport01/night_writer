@@ -11,11 +11,16 @@ class NightWriter
   def read_file 
     # content = File.read(@input_file)
     # individual_letters = content.scan(/\w/)
-    @content = File.read(@input_file).scan(/\w/)
+    # @content = File.read(@input_file).scan(/\w/)
+    File.read(@input_file)
+  end
+
+  def individual_letters
+    @content = read_file.scan(/\w/)
   end
 
   def translate
-    read_file
+    individual_letters
     # content = File.read(@input_file).scan(/\w/)    
     @braille_letters = []
     @content.each do |letter|
@@ -41,7 +46,7 @@ class NightWriter
         block = block.lines.map(&:chomp).zip(i[j].lines.map(&:chomp)).map(&:join).join("\n")
       end
       @total_block << block
-      @total_block << " "
+      # @total_block << " "
     end
     # translation = File.write(ARGV[1], total_block.join("\n"))
     # puts " Created #{ARGV[1]} containing #{braille_letters.length} characters"
