@@ -5,7 +5,6 @@ class NightWriter < Dictionary
   def initialize(input_file, output_file)
     @input_file = ARGV[0]
     @output_file = ARGV[1]
-    # @dictionary = Dictionary.new
     super()
   end
 

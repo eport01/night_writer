@@ -39,7 +39,8 @@ class Dictionary
 
   def translate_braille(character)
     @alphabet.select {|letters| letters.find {|eng, braille| braille  == character}}[0].keys[0]
-
   end
+
+  
 end
 
