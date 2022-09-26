@@ -35,7 +35,6 @@ class Dictionary
 
   def translate_letter(letter)
     test = @alphabet.select {|letters| letters.find {|eng, braille| eng  == letter}}[0].values[0]
-    
   end
 
   def translate_braille(character)

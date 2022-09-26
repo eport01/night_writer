@@ -54,3 +54,4 @@ class NightWriter
 end
 
 
+
