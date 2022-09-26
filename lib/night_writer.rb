@@ -1,11 +1,11 @@
 require './lib/dictionary'
 
-class NightWriter
+class NightWriter < Dictionary 
   attr_reader :write_to_file, :dictionary, :read_file, :input_file, :output_file, :eng_to_br, :translate
   def initialize(input_file, output_file)
     @input_file = ARGV[0]
     @output_file = ARGV[1]
-    @dictionary = Dictionary.new
+    super()
   end
 
   def read_file 
@@ -20,7 +20,7 @@ class NightWriter
     individual_letters
     @braille_letters = []
     @content.each do |letter|
-      @braille_letters << @dictionary.translate_letter(letter)
+      @braille_letters << translate_letter(letter)
     end
     @braille_letters
   end 
@@ -52,5 +52,6 @@ class NightWriter
     puts " Created #{ARGV[1]} containing #{@braille_letters.length} characters"
   end
 end
+
 
 

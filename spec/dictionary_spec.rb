@@ -17,11 +17,6 @@ RSpec.describe Dictionary do
   it 'can read from an input file and write to an output file' do 
     @night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt')
     dictionary = Dictionary.new
-    # require 'pry'; binding.pry
     expect(dictionary.translate_letter("h")).to eq( "0.\n00\n..")
-
-
   end 
-
-  
 end
