@@ -14,9 +14,13 @@ RSpec.describe Dictionary do
     expect(dictionary.translate_letter("a")).to eq( "0.\n..\n..")
   end
 
-  it 'can read from an input file and write to an output file' do 
-    @night_writer = NightWriter.new('./lib/message.txt', './lib/braille.txt')
+  it 'translates braille to english' do 
     dictionary = Dictionary.new
-    expect(dictionary.translate_letter("h")).to eq( "0.\n00\n..")
-  end 
+    expect(dictionary.translate_braille("0.\n00\n..")).to eq("h")
+  end
+
+  it 'can translate punctuation' do 
+    dictionary = Dictionary.new
+    expect(dictionary.translate_letter("?")).to eq("..\n0.\n00")
+  end
 end
