@@ -1,4 +1,3 @@
-
 class Dictionary
   attr_reader :alphabet, :translate_letter, :translate_braille
   def initialize
@@ -39,7 +38,6 @@ class Dictionary
       {"?" => "..\n0.\n00"},
       {"'" => "..\n..\n0."},
       {"-" => "..\n..\n00"},
-
     ]
   end
 
@@ -50,7 +48,5 @@ class Dictionary
   def translate_braille(character)
     @alphabet.select {|letters| letters.find {|eng, braille| braille  == character}}[0].keys[0]
   end
-
-
 end
 

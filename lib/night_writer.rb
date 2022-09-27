@@ -53,5 +53,8 @@ class NightWriter < Dictionary
   end
 end
 
+night_writer = NightWriter.new(ARGV[0], ARGV[1])
+night_writer.braille_print
+
 
 

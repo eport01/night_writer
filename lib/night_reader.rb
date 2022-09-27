@@ -49,3 +49,5 @@ class NightReader < Dictionary
   end
 end
 
+night_reader = NightReader.new(ARGV[0], ARGV[1])
+night_reader.english_print

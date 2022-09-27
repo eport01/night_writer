@@ -22,6 +22,5 @@ RSpec.describe Dictionary do
   it 'can translate punctuation' do 
     dictionary = Dictionary.new
     expect(dictionary.translate_letter("?")).to eq("..\n0.\n00")
-
   end
 end
